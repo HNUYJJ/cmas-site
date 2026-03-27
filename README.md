@@ -1,6 +1,6 @@
 # CMAS Website
 
-Official website draft for the China Multi-Agent Systems Conference (CMAS).
+Official website draft for the china conference on multiagent system (CMAS).
 
 ## Overview
 
