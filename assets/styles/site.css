@@ -615,6 +615,28 @@ a {
   object-fit: contain;
 }
 
+.sponsor-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.sponsor-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 20px;
+}
+
+.sponsor-logo-card img {
+  width: auto;
+  max-width: min(260px, 100%);
+  max-height: 72px;
+  object-fit: contain;
+}
+
 .text-center {
   text-align: center;
   margin-left: auto;
@@ -718,6 +740,97 @@ a {
   line-height: 1.5;
 }
 
+.agenda-day-plan {
+  display: grid;
+  gap: 14px;
+}
+
+.agenda-slot {
+  padding: 12px 14px;
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.agenda-slot h4 {
+  margin: 0 0 8px;
+  color: var(--primary);
+  font-size: 0.98rem;
+}
+
+.agenda-slot p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.agenda-slot p+p {
+  margin-top: 8px;
+}
+
+.forum-lines {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(23, 32, 51, 0.12);
+}
+
+.map-hero-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.map-image-wrap {
+  border-bottom: 1px solid rgba(23, 32, 51, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.map-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+}
+
+.map-iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border: 0;
+}
+
+.map-fallback-note {
+  margin: 0;
+  padding: 10px 14px;
+  border-top: 1px dashed rgba(23, 32, 51, 0.12);
+  background: rgba(23, 32, 51, 0.04);
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.map-meta {
+  padding: 20px 22px 22px;
+}
+
+.travel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.hotel-list p {
+  margin: 0;
+}
+
+.hotel-list p+p {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(23, 32, 51, 0.12);
+}
+
 /* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, var(--primary) 0%, #5d1015 100%);
@@ -797,7 +910,9 @@ a {
   .grid-4,
   .grid-3,
   .grid-2,
-  .metrics {
+  .metrics,
+  .travel-grid,
+  .sponsor-logo-grid {
     grid-template-columns: 1fr;
   }
 
