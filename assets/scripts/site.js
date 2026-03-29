@@ -83,3 +83,24 @@ if ("IntersectionObserver" in window) {
     item.classList.add("is-visible");
   }
 }
+
+const photoMarquees = document.querySelectorAll(".photo-marquee");
+
+for (const marquee of photoMarquees) {
+  const track = marquee.querySelector(".photo-track");
+  if (!track) continue;
+
+  if (track.dataset.loopReady === "1") continue;
+
+  const originalImages = Array.from(track.querySelectorAll("img")).filter((img) => !img.dataset.loopClone);
+  if (originalImages.length === 0) continue;
+
+  for (const image of originalImages) {
+    const clone = image.cloneNode(true);
+    clone.dataset.loopClone = "1";
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+  }
+
+  track.dataset.loopReady = "1";
+}
