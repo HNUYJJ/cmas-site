@@ -703,7 +703,7 @@ main>.section+.section {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 0 1 420px;
+  flex: 0 1 320px;
   min-height: 0;
   padding: 8px;
   border: none;
@@ -715,10 +715,12 @@ main>.section+.section {
   display: block;
   width: auto;
   height: auto;
-  max-width: min(100%, 420px);
+  max-width: min(100%, 300px);
   max-height: 128px;
   object-fit: contain;
   object-position: center;
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) saturate(1.05) brightness(0.98);
 }
 
 .centered-content,
@@ -885,22 +887,15 @@ main>.section+.section {
   gap: 14px;
 }
 
-.agenda-grid {
-  align-items: start;
-}
-
-.agenda-day-card {
-  text-align: center;
-}
-
 .agenda-day-title {
+  margin: 0;
   text-align: center;
 }
 
 .agenda-slot {
-  padding: 12px 14px;
+  padding: 16px 18px;
   border: 1px solid rgba(23, 32, 51, 0.08);
-  border-radius: 12px;
+  border-radius: 14px;
   background: rgba(255, 255, 255, 0.72);
   text-align: left;
 }
@@ -908,7 +903,7 @@ main>.section+.section {
 .agenda-slot h4 {
   margin: 0 0 8px;
   color: var(--primary);
-  font-size: 0.98rem;
+  font-size: 1.02rem;
   text-align: center;
 }
 
@@ -916,6 +911,7 @@ main>.section+.section {
   margin: 0;
   color: var(--muted);
   line-height: 1.55;
+  text-align: center;
 }
 
 .agenda-slot p+p {
@@ -928,6 +924,128 @@ main>.section+.section {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px dashed rgba(23, 32, 51, 0.12);
+}
+
+.agenda-note-card {
+  margin-top: 24px;
+  border-style: dashed;
+  background: linear-gradient(135deg, rgba(0, 86, 179, 0.07) 0%, rgba(0, 162, 237, 0.08) 100%);
+}
+
+.agenda-note-card p {
+  margin: 0;
+  color: #274468;
+}
+
+.program-block {
+  margin-top: 26px;
+  display: grid;
+  gap: 16px;
+}
+
+.program-block-header {
+  padding: 12px 0 2px;
+  border-bottom: 1px solid rgba(23, 32, 51, 0.12);
+  text-align: center;
+}
+
+.program-block-header .section-kicker {
+  margin-bottom: 8px;
+}
+
+.agenda-track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.forum-track-card {
+  padding: 16px;
+}
+
+.forum-track-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.03rem;
+  text-align: center;
+}
+
+.forum-track-meta {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.talk-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.talk-item {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: rgba(23, 32, 51, 0.04);
+  border: 1px solid rgba(23, 32, 51, 0.08);
+}
+
+.talk-break {
+  background: rgba(0, 86, 179, 0.07);
+  border-style: dashed;
+}
+
+.talk-time {
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.talk-content {
+  display: grid;
+  gap: 3px;
+}
+
+.talk-title {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.talk-speaker {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.centered-content .agenda-note-card,
+.centered-content .program-block,
+.centered-content .program-block-header,
+.centered-content .agenda-slot,
+.centered-content .agenda-slot h4,
+.centered-content .agenda-slot p,
+.centered-content .forum-track-card,
+.centered-content .forum-track-title,
+.centered-content .forum-track-meta,
+.centered-content .talk-list,
+.centered-content .talk-item,
+.centered-content .talk-title,
+.centered-content .talk-speaker,
+.centered-content .talk-time,
+.centered-content .agenda-day-title {
+  text-align: center;
+}
+
+.centered-content .talk-list {
+  justify-content: stretch;
 }
 
 .map-hero-card {
@@ -1160,6 +1278,10 @@ main>.section+.section {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .agenda-track-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -1240,6 +1362,15 @@ main>.section+.section {
 
   .site-footer {
     padding: 20px 12px;
+  }
+
+  .agenda-track-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .talk-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 }
 
