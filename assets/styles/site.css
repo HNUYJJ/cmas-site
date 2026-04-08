@@ -723,6 +723,11 @@ main>.section+.section {
   filter: contrast(1.08) saturate(1.05) brightness(0.98);
 }
 
+.sponsor-logo-card img.logo-bytedance {
+  max-width: min(100%, 400px);
+  max-height: 200px;
+}
+
 .centered-content,
 .centered-content .section,
 .centered-content .section-heading,
