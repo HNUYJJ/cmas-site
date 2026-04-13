@@ -1398,7 +1398,7 @@ main>.section+.section {
   }
 
   .brand-text>span {
-    display: none;
+    font-size: 0.76rem;
   }
 
   .nav-links {
