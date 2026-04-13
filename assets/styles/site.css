@@ -29,6 +29,11 @@ body {
   min-height: 100%;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 img,
 iframe {
   max-width: 100%;
@@ -184,6 +189,20 @@ main::before {
 .brand-text span {
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.brand-text strong,
+.brand-text span,
+.hero-title .i18n-en,
+.hero-subtitle,
+.fact-item dd,
+.guest-affiliation,
+.talk-title,
+.talk-speaker,
+.map-meta p,
+.hotel-list p,
+.detail-list li span {
+  overflow-wrap: anywhere;
 }
 
 .nav-links {
@@ -598,9 +617,8 @@ main>.section+.section {
   z-index: -1;
   top: 0;
   bottom: -48px;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   background:
     linear-gradient(180deg, rgba(9, 25, 52, 0.98) 0%, rgba(8, 21, 44, 0.99) 100%);
   border-top: 1px solid rgba(123, 164, 231, 0.2);
@@ -1289,6 +1307,34 @@ main>.section+.section {
   }
 }
 
+@media (max-width: 900px) {
+
+  .brand-title-chunk,
+  .hero-title-chunk {
+    white-space: normal;
+  }
+
+  .brand-title-zh,
+  .hero-title-zh,
+  .brand-title .i18n-zh,
+  .brand-title .i18n-en,
+  .hero-title .i18n-zh,
+  .hero-title .i18n-en {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-copy,
+  .hero-panel,
+  .brand-text {
+    min-width: 0;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 760px) {
   .site-shell {
     padding-left: 0;
@@ -1313,13 +1359,20 @@ main>.section+.section {
   }
 
   .site-header {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
     top: 0;
     padding: 14px;
     border-radius: 18px;
+    align-items: stretch;
+    gap: 12px;
   }
 
   .brand {
+    grid-column: 1 / -1;
     width: 100%;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .brand-mark {
@@ -1328,32 +1381,94 @@ main>.section+.section {
     border-radius: 16px;
   }
 
+  .brand-text {
+    gap: 4px;
+  }
+
+  .brand-text strong {
+    font-size: 0.94rem;
+    line-height: 1.2;
+  }
+
+  .brand-text>span {
+    display: none;
+  }
+
   .nav-links {
-    justify-content: flex-start;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 8px;
+    overflow: visible;
+    padding-bottom: 0;
+    align-self: start;
   }
 
   .nav-links a {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    min-width: 0;
+    white-space: normal;
+    text-align: center;
+    padding: 9px 6px;
+    border: 1px solid rgba(23, 32, 51, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 0.86rem;
+    line-height: 1.25;
   }
 
   .lang-link {
-    margin-left: auto;
+    grid-column: 1;
+    width: 60px;
+    min-height: 48px;
+    margin-left: 0;
+    justify-content: center;
+    align-self: start;
+  }
+
+  .hero-content-wrapper {
+    padding: 36px 18px 28px;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    gap: 18px;
+  }
+
+  .hero-panel {
+    padding: 20px 18px;
   }
 
   .hero h1 {
-    font-size: clamp(2.2rem, 12vw, 3.2rem);
+    font-size: clamp(1.9rem, 10.5vw, 2.8rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
   }
 
   .hero-title-zh {
-    width: min(100%, 8.6em);
+    width: 100%;
+  }
+
+  .hero-title .i18n-en {
+    font-size: clamp(1.45rem, 7.2vw, 1.95rem);
+    line-height: 1.18;
   }
 
   .hero-subtitle {
-    font-size: 1.02rem;
+    font-size: 0.98rem;
+  }
+
+  .hero-features {
+    gap: 8px;
+  }
+
+  .feature-tag,
+  .button-row .button {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
   }
 
   .history-card {
@@ -1376,6 +1491,67 @@ main>.section+.section {
   .talk-item {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .timeline-list li {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .timeline-list .time {
+    min-width: 0;
+  }
+
+  .map-iframe,
+  .map-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .map-meta {
+    padding: 18px 16px 20px;
+  }
+
+  .photo-track {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .photo-track img {
+    flex: 0 0 min(78vw, 320px);
+    width: min(78vw, 320px);
+    height: clamp(170px, 52vw, 220px);
+  }
+
+  .photo-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lang-link {
+    width: 56px;
+  }
+
+  .hero-content-wrapper {
+    padding: 30px 14px 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 10vw, 2.45rem);
+  }
+
+  .draft-tag,
+  .feature-tag {
+    font-size: 0.8rem;
   }
 }
 
