@@ -22,6 +22,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html,
@@ -147,11 +149,16 @@ main::before {
   justify-content: center;
   width: 58px;
   height: 58px;
+  padding: 0 3px;
+  overflow: hidden;
   border-radius: 18px;
   background: linear-gradient(145deg, var(--primary) 0%, #71181d 100%);
   color: #fff7f2;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.98rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
@@ -187,6 +194,7 @@ main::before {
 }
 
 .brand-text span {
+  display: block;
   color: var(--muted);
   font-size: 0.88rem;
 }
@@ -1376,9 +1384,12 @@ main>.section+.section {
   }
 
   .brand-mark {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
+    padding: 0 2px;
     border-radius: 16px;
+    font-size: clamp(0.72rem, 2.6vw, 0.86rem);
+    letter-spacing: 0;
   }
 
   .brand-text {
@@ -1391,7 +1402,9 @@ main>.section+.section {
   }
 
   .brand-text>span {
-    display: none;
+    display: block !important;
+    font-size: 0.76rem;
+    line-height: 1.25;
   }
 
   .nav-links {
@@ -1539,6 +1552,13 @@ main>.section+.section {
 
   .lang-link {
     width: 56px;
+  }
+
+  .brand-mark {
+    width: 52px;
+    height: 52px;
+    font-size: clamp(0.68rem, 2.9vw, 0.8rem);
+    letter-spacing: 0;
   }
 
   .hero-content-wrapper {
