@@ -750,6 +750,11 @@ main>.section+.section {
   max-height: 200px;
 }
 
+.sponsor-logo-card img.logo-huawei {
+  max-width: min(100%, 280px);
+  max-height: 120px;
+}
+
 .centered-content,
 .centered-content .section,
 .centered-content .section-heading,
