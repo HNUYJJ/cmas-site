@@ -719,6 +719,7 @@ main>.section+.section {
 
 .sponsor-logo-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 0 1 320px;
@@ -739,6 +740,14 @@ main>.section+.section {
   object-position: center;
   mix-blend-mode: multiply;
   filter: contrast(1.08) saturate(1.05) brightness(0.98);
+}
+
+.sponsor-logo-caption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .sponsor-logo-card img.logo-bytedance {
