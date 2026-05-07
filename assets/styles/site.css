@@ -710,16 +710,18 @@ html[data-lang="en"] .hero-title .i18n-en {
 }
 
 .sponsor-logo-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 230px 190px 250px 520px;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 18px 28px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 24px auto 0;
 }
 
 .sponsor-tier-title {
-  width: 100%;
+  grid-column: 1 / -1;
   margin: 0;
   text-align: center;
   font-size: 0.86rem;
@@ -733,7 +735,7 @@ html[data-lang="en"] .hero-title .i18n-en {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 0 1 320px;
+  min-width: 0;
   min-height: 0;
   padding: 8px;
   border: none;
@@ -764,6 +766,16 @@ html[data-lang="en"] .hero-title .i18n-en {
 .sponsor-logo-card img.logo-bytedance {
   max-width: min(100%, 400px);
   max-height: 200px;
+}
+
+.sponsor-logo-card.logo-card-nju-ai-school {
+  overflow: visible;
+}
+
+.sponsor-logo-card img.logo-nju-ai-school {
+  max-width: min(100%, 500px);
+  max-height: 150px;
+  transform: none;
 }
 
 .centered-content,
@@ -1312,13 +1324,37 @@ html[data-lang="en"] .hero-title .i18n-en {
   .grid-3,
   .grid-2,
   .metrics,
-  .travel-grid,
-  .sponsor-logo-grid {
+  .travel-grid {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
     max-width: none;
+  }
+}
+
+@media (max-width: 1320px) {
+  .sponsor-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 820px);
+    gap: 20px 32px;
+  }
+
+  .sponsor-logo-card img.logo-bytedance {
+    max-width: min(100%, 320px);
+    max-height: 170px;
+  }
+
+  .sponsor-logo-card img.logo-nju-ai-school {
+    max-width: min(100%, 420px);
+    max-height: 140px;
+  }
+}
+
+@media (max-width: 720px) {
+  .sponsor-logo-grid {
+    grid-template-columns: 1fr;
+    width: min(100%, 420px);
   }
 }
 
