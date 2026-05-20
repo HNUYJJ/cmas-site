@@ -1064,6 +1064,37 @@ html[data-lang="en"] .hero-title .i18n-en {
   border-style: dashed;
 }
 
+/* Executive Committee Meeting – distinctive style */
+.talk-meeting {
+  background: linear-gradient(135deg, rgba(88, 44, 131, 0.10) 0%, rgba(180, 130, 40, 0.12) 100%);
+  border: 1.5px solid rgba(88, 44, 131, 0.25);
+  border-left: 4px solid #6a3093;
+  position: relative;
+  overflow: hidden;
+}
+
+.talk-meeting::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(128, 70, 180, 0.06) 0%, rgba(212, 175, 55, 0.05) 60%, transparent 100%);
+  pointer-events: none;
+}
+
+.talk-meeting .talk-time {
+  color: #6a3093;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.talk-meeting-title {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif !important;
+  font-weight: 700 !important;
+  font-size: 0.96rem !important;
+  color: #4a1d6e !important;
+  letter-spacing: 0.06em;
+}
+
 .talk-time {
   color: var(--primary);
   font-size: 0.84rem;
