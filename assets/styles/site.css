@@ -1067,10 +1067,11 @@ html[data-lang="en"] .hero-title .i18n-en {
 /* Executive Committee Meeting – distinctive style */
 .talk-meeting {
   background: linear-gradient(135deg, rgba(88, 44, 131, 0.10) 0%, rgba(180, 130, 40, 0.12) 100%);
-  border: 1.5px solid rgba(88, 44, 131, 0.25);
-  border-left: 4px solid #6a3093;
+  border: 1px solid rgba(88, 44, 131, 0.25);
   position: relative;
   overflow: hidden;
+  min-height: 58px;
+  align-items: center;
 }
 
 .talk-meeting::before {
