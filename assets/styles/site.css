@@ -1052,7 +1052,7 @@ html[data-lang="en"] .hero-title .i18n-en {
   display: grid;
   grid-template-columns: 92px minmax(0, 1fr);
   gap: 10px;
-  align-items: start;
+  align-items: center;
   padding: 9px 10px;
   border-radius: 10px;
   background: rgba(23, 32, 51, 0.04);
