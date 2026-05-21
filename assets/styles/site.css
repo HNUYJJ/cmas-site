@@ -1721,3 +1721,67 @@ html:not([data-lang="en"]) .i18n-en {
 .lang-toggle .i18n-en {
   pointer-events: none;
 }
+
+/* Fee Table Styles */
+.fee-bar-title {
+  position: relative;
+  padding-left: 14px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+  color: var(--text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.fee-bar-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 20px;
+  background-color: #3482db;
+  border-radius: 2px;
+}
+
+.fee-subtitle {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-align: left;
+}
+
+.fee-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  border-radius: 0;
+  background-color: #fff;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 600px;
+}
+
+.fee-table th,
+.fee-table td {
+  padding: 14px 12px;
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  vertical-align: middle;
+}
+
+.fee-table th {
+  background-color: #3482db;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.fee-table td {
+  font-size: 0.95rem;
+  color: var(--text);
+}
